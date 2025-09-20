@@ -266,3 +266,7 @@ async def save_results(payload: Dict = Body(...)) -> JSONResponse:
     except Exception as e:
         logger.error(f"Error saving results: {e}")
         return JSONResponse(status_code=500, content={"error": "Failed to save results"})
+
+@app.get("/")
+def root():
+    return "Backend is Running"
